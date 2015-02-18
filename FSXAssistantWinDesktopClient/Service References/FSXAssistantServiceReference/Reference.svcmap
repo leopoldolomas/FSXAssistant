@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bc35b9e3-ba18-4015-9e87-f6f7ca0e7e75" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://localhost:9000/FSXAssistant/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="6edaa8a5-d3c5-408c-99a7-15b3ab6a0d77" SourceId="1" SourceUrl="net.tcp://localhost:9000/FSXAssistant/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="38cda2ad-2e17-4f06-8dab-f079b3be0376" SourceId="1" SourceUrl="net.tcp://localhost:9000/FSXAssistant/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="933d9b96-8b14-4361-af37-b50ad50928fc" SourceId="1" SourceUrl="net.tcp://localhost:9000/FSXAssistant/mex" />
+    <MetadataFile FileName="FSXAssistantServer.xsd" MetadataType="Schema" ID="f60925bb-6ce0-46cf-8192-e9a9ff41df98" SourceId="1" SourceUrl="net.tcp://localhost:9000/FSXAssistant/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

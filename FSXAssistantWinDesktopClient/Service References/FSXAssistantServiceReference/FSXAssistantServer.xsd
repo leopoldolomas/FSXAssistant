@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FSXAssistantServer" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FSXAssistantServer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="APState">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Airspeed" type="xs:double" />
+      <xs:element name="Altitude" type="xs:double" />
+      <xs:element name="AltitudeHold" type="xs:double" />
+      <xs:element name="AutoThrottle" type="xs:double" />
+      <xs:element name="BankAngle" type="xs:double" />
+      <xs:element name="DesiredVerticalSpeed" type="xs:double" />
+      <xs:element name="Heading" type="xs:double" />
+      <xs:element name="HeadingHold" type="xs:double" />
+      <xs:element name="Master" type="xs:double" />
+      <xs:element name="SpeedHold" type="xs:double" />
+      <xs:element name="VerticalSpeed" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="APState" nillable="true" type="tns:APState" />
+</xs:schema>

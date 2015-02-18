@@ -1,0 +1,555 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FSXAssistantService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IFSXAssistant_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256>
+                </sp:Basic256>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict>
+                </sp:Strict>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/FSXAssistantServer" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFSXAssistant_SimConnect_Start_InputMessage">
+    <wsdl:part name="parameters" element="tns:SimConnect_Start" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_SimConnect_Start_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SimConnect_StartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_SimConnect_Dispatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:SimConnect_Dispatch" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_SimConnect_Dispatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SimConnect_DispatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_SimConnect_IsClosing_InputMessage">
+    <wsdl:part name="parameters" element="tns:SimConnect_IsClosing" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_SimConnect_IsClosing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SimConnect_IsClosingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_state_InputMessage">
+    <wsdl:part name="parameters" element="tns:AP_state" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_state_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AP_stateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_master_InputMessage">
+    <wsdl:part name="parameters" element="tns:AP_master" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_master_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AP_masterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_toggleMaster_InputMessage">
+    <wsdl:part name="parameters" element="tns:AP_toggleMaster" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_toggleMaster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AP_toggleMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_autoThrottle_InputMessage">
+    <wsdl:part name="parameters" element="tns:AP_autoThrottle" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_autoThrottle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AP_autoThrottleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_toggleAutoThrottle_InputMessage">
+    <wsdl:part name="parameters" element="tns:AP_toggleAutoThrottle" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_toggleAutoThrottle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AP_toggleAutoThrottleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_heading_InputMessage">
+    <wsdl:part name="parameters" element="tns:AP_heading" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_heading_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AP_headingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_setHeading_InputMessage">
+    <wsdl:part name="parameters" element="tns:AP_setHeading" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_setHeading_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AP_setHeadingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_verticalAirspeed_InputMessage">
+    <wsdl:part name="parameters" element="tns:AP_verticalAirspeed" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_verticalAirspeed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AP_verticalAirspeedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_desiredVerticalAirspeed_InputMessage">
+    <wsdl:part name="parameters" element="tns:AP_desiredVerticalAirspeed" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_desiredVerticalAirspeed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AP_desiredVerticalAirspeedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_setDesiredVerticalAirspeed_InputMessage">
+    <wsdl:part name="parameters" element="tns:AP_setDesiredVerticalAirspeed" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_setDesiredVerticalAirspeed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AP_setDesiredVerticalAirspeedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_airspeed_InputMessage">
+    <wsdl:part name="parameters" element="tns:AP_airspeed" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_airspeed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AP_airspeedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_setAirspeed_InputMessage">
+    <wsdl:part name="parameters" element="tns:AP_setAirspeed" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_setAirspeed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AP_setAirspeedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_airspeedHold_InputMessage">
+    <wsdl:part name="parameters" element="tns:AP_airspeedHold" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_airspeedHold_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AP_airspeedHoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_toggleSpeedHold_InputMessage">
+    <wsdl:part name="parameters" element="tns:AP_toggleSpeedHold" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_toggleSpeedHold_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AP_toggleSpeedHoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_headingHold_InputMessage">
+    <wsdl:part name="parameters" element="tns:AP_headingHold" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_headingHold_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AP_headingHoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_toggleHeadingHold_InputMessage">
+    <wsdl:part name="parameters" element="tns:AP_toggleHeadingHold" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_toggleHeadingHold_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AP_toggleHeadingHoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_altitudeHold_InputMessage">
+    <wsdl:part name="parameters" element="tns:AP_altitudeHold" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_altitudeHold_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AP_altitudeHoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_toggleAltitudeHold_InputMessage">
+    <wsdl:part name="parameters" element="tns:AP_toggleAltitudeHold" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_toggleAltitudeHold_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AP_toggleAltitudeHoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_altitude_InputMessage">
+    <wsdl:part name="parameters" element="tns:AP_altitude" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_altitude_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AP_altitudeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_setAltitude_InputMessage">
+    <wsdl:part name="parameters" element="tns:AP_setAltitude" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_setAltitude_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AP_setAltitudeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_maxBankAngle_InputMessage">
+    <wsdl:part name="parameters" element="tns:AP_maxBankAngle" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_maxBankAngle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AP_maxBankAngleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_increaseMaxBankAngle_InputMessage">
+    <wsdl:part name="parameters" element="tns:AP_increaseMaxBankAngle" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_increaseMaxBankAngle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AP_increaseMaxBankAngleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_decreaseMaxBankAngle_InputMessage">
+    <wsdl:part name="parameters" element="tns:AP_decreaseMaxBankAngle" />
+  </wsdl:message>
+  <wsdl:message name="IFSXAssistant_AP_decreaseMaxBankAngle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AP_decreaseMaxBankAngleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFSXAssistant">
+    <wsdl:operation name="SimConnect_Start">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFSXAssistant/SimConnect_Start" message="tns:IFSXAssistant_SimConnect_Start_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFSXAssistant/SimConnect_StartResponse" message="tns:IFSXAssistant_SimConnect_Start_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SimConnect_Dispatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFSXAssistant/SimConnect_Dispatch" message="tns:IFSXAssistant_SimConnect_Dispatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFSXAssistant/SimConnect_DispatchResponse" message="tns:IFSXAssistant_SimConnect_Dispatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SimConnect_IsClosing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFSXAssistant/SimConnect_IsClosing" message="tns:IFSXAssistant_SimConnect_IsClosing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFSXAssistant/SimConnect_IsClosingResponse" message="tns:IFSXAssistant_SimConnect_IsClosing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AP_state">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFSXAssistant/AP_state" message="tns:IFSXAssistant_AP_state_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFSXAssistant/AP_stateResponse" message="tns:IFSXAssistant_AP_state_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AP_master">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFSXAssistant/AP_master" message="tns:IFSXAssistant_AP_master_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFSXAssistant/AP_masterResponse" message="tns:IFSXAssistant_AP_master_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AP_toggleMaster">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFSXAssistant/AP_toggleMaster" message="tns:IFSXAssistant_AP_toggleMaster_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFSXAssistant/AP_toggleMasterResponse" message="tns:IFSXAssistant_AP_toggleMaster_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AP_autoThrottle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFSXAssistant/AP_autoThrottle" message="tns:IFSXAssistant_AP_autoThrottle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFSXAssistant/AP_autoThrottleResponse" message="tns:IFSXAssistant_AP_autoThrottle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AP_toggleAutoThrottle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFSXAssistant/AP_toggleAutoThrottle" message="tns:IFSXAssistant_AP_toggleAutoThrottle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFSXAssistant/AP_toggleAutoThrottleResponse" message="tns:IFSXAssistant_AP_toggleAutoThrottle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AP_heading">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFSXAssistant/AP_heading" message="tns:IFSXAssistant_AP_heading_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFSXAssistant/AP_headingResponse" message="tns:IFSXAssistant_AP_heading_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AP_setHeading">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFSXAssistant/AP_setHeading" message="tns:IFSXAssistant_AP_setHeading_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFSXAssistant/AP_setHeadingResponse" message="tns:IFSXAssistant_AP_setHeading_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AP_verticalAirspeed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFSXAssistant/AP_verticalAirspeed" message="tns:IFSXAssistant_AP_verticalAirspeed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFSXAssistant/AP_verticalAirspeedResponse" message="tns:IFSXAssistant_AP_verticalAirspeed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AP_desiredVerticalAirspeed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFSXAssistant/AP_desiredVerticalAirspeed" message="tns:IFSXAssistant_AP_desiredVerticalAirspeed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFSXAssistant/AP_desiredVerticalAirspeedResponse" message="tns:IFSXAssistant_AP_desiredVerticalAirspeed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AP_setDesiredVerticalAirspeed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFSXAssistant/AP_setDesiredVerticalAirspeed" message="tns:IFSXAssistant_AP_setDesiredVerticalAirspeed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFSXAssistant/AP_setDesiredVerticalAirspeedResponse" message="tns:IFSXAssistant_AP_setDesiredVerticalAirspeed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AP_airspeed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFSXAssistant/AP_airspeed" message="tns:IFSXAssistant_AP_airspeed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFSXAssistant/AP_airspeedResponse" message="tns:IFSXAssistant_AP_airspeed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AP_setAirspeed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFSXAssistant/AP_setAirspeed" message="tns:IFSXAssistant_AP_setAirspeed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFSXAssistant/AP_setAirspeedResponse" message="tns:IFSXAssistant_AP_setAirspeed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AP_airspeedHold">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFSXAssistant/AP_airspeedHold" message="tns:IFSXAssistant_AP_airspeedHold_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFSXAssistant/AP_airspeedHoldResponse" message="tns:IFSXAssistant_AP_airspeedHold_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AP_toggleSpeedHold">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFSXAssistant/AP_toggleSpeedHold" message="tns:IFSXAssistant_AP_toggleSpeedHold_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFSXAssistant/AP_toggleSpeedHoldResponse" message="tns:IFSXAssistant_AP_toggleSpeedHold_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AP_headingHold">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFSXAssistant/AP_headingHold" message="tns:IFSXAssistant_AP_headingHold_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFSXAssistant/AP_headingHoldResponse" message="tns:IFSXAssistant_AP_headingHold_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AP_toggleHeadingHold">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFSXAssistant/AP_toggleHeadingHold" message="tns:IFSXAssistant_AP_toggleHeadingHold_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFSXAssistant/AP_toggleHeadingHoldResponse" message="tns:IFSXAssistant_AP_toggleHeadingHold_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AP_altitudeHold">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFSXAssistant/AP_altitudeHold" message="tns:IFSXAssistant_AP_altitudeHold_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFSXAssistant/AP_altitudeHoldResponse" message="tns:IFSXAssistant_AP_altitudeHold_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AP_toggleAltitudeHold">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFSXAssistant/AP_toggleAltitudeHold" message="tns:IFSXAssistant_AP_toggleAltitudeHold_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFSXAssistant/AP_toggleAltitudeHoldResponse" message="tns:IFSXAssistant_AP_toggleAltitudeHold_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AP_altitude">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFSXAssistant/AP_altitude" message="tns:IFSXAssistant_AP_altitude_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFSXAssistant/AP_altitudeResponse" message="tns:IFSXAssistant_AP_altitude_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AP_setAltitude">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFSXAssistant/AP_setAltitude" message="tns:IFSXAssistant_AP_setAltitude_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFSXAssistant/AP_setAltitudeResponse" message="tns:IFSXAssistant_AP_setAltitude_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AP_maxBankAngle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFSXAssistant/AP_maxBankAngle" message="tns:IFSXAssistant_AP_maxBankAngle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFSXAssistant/AP_maxBankAngleResponse" message="tns:IFSXAssistant_AP_maxBankAngle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AP_increaseMaxBankAngle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFSXAssistant/AP_increaseMaxBankAngle" message="tns:IFSXAssistant_AP_increaseMaxBankAngle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFSXAssistant/AP_increaseMaxBankAngleResponse" message="tns:IFSXAssistant_AP_increaseMaxBankAngle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AP_decreaseMaxBankAngle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFSXAssistant/AP_decreaseMaxBankAngle" message="tns:IFSXAssistant_AP_decreaseMaxBankAngle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFSXAssistant/AP_decreaseMaxBankAngleResponse" message="tns:IFSXAssistant_AP_decreaseMaxBankAngle_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IFSXAssistant" type="tns:IFSXAssistant">
+    <wsp:PolicyReference URI="#NetTcpBinding_IFSXAssistant_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="SimConnect_Start">
+      <soap12:operation soapAction="http://tempuri.org/IFSXAssistant/SimConnect_Start" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SimConnect_Dispatch">
+      <soap12:operation soapAction="http://tempuri.org/IFSXAssistant/SimConnect_Dispatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SimConnect_IsClosing">
+      <soap12:operation soapAction="http://tempuri.org/IFSXAssistant/SimConnect_IsClosing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AP_state">
+      <soap12:operation soapAction="http://tempuri.org/IFSXAssistant/AP_state" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AP_master">
+      <soap12:operation soapAction="http://tempuri.org/IFSXAssistant/AP_master" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AP_toggleMaster">
+      <soap12:operation soapAction="http://tempuri.org/IFSXAssistant/AP_toggleMaster" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AP_autoThrottle">
+      <soap12:operation soapAction="http://tempuri.org/IFSXAssistant/AP_autoThrottle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AP_toggleAutoThrottle">
+      <soap12:operation soapAction="http://tempuri.org/IFSXAssistant/AP_toggleAutoThrottle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AP_heading">
+      <soap12:operation soapAction="http://tempuri.org/IFSXAssistant/AP_heading" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AP_setHeading">
+      <soap12:operation soapAction="http://tempuri.org/IFSXAssistant/AP_setHeading" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AP_verticalAirspeed">
+      <soap12:operation soapAction="http://tempuri.org/IFSXAssistant/AP_verticalAirspeed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AP_desiredVerticalAirspeed">
+      <soap12:operation soapAction="http://tempuri.org/IFSXAssistant/AP_desiredVerticalAirspeed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AP_setDesiredVerticalAirspeed">
+      <soap12:operation soapAction="http://tempuri.org/IFSXAssistant/AP_setDesiredVerticalAirspeed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AP_airspeed">
+      <soap12:operation soapAction="http://tempuri.org/IFSXAssistant/AP_airspeed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AP_setAirspeed">
+      <soap12:operation soapAction="http://tempuri.org/IFSXAssistant/AP_setAirspeed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AP_airspeedHold">
+      <soap12:operation soapAction="http://tempuri.org/IFSXAssistant/AP_airspeedHold" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AP_toggleSpeedHold">
+      <soap12:operation soapAction="http://tempuri.org/IFSXAssistant/AP_toggleSpeedHold" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AP_headingHold">
+      <soap12:operation soapAction="http://tempuri.org/IFSXAssistant/AP_headingHold" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AP_toggleHeadingHold">
+      <soap12:operation soapAction="http://tempuri.org/IFSXAssistant/AP_toggleHeadingHold" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AP_altitudeHold">
+      <soap12:operation soapAction="http://tempuri.org/IFSXAssistant/AP_altitudeHold" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AP_toggleAltitudeHold">
+      <soap12:operation soapAction="http://tempuri.org/IFSXAssistant/AP_toggleAltitudeHold" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AP_altitude">
+      <soap12:operation soapAction="http://tempuri.org/IFSXAssistant/AP_altitude" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AP_setAltitude">
+      <soap12:operation soapAction="http://tempuri.org/IFSXAssistant/AP_setAltitude" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AP_maxBankAngle">
+      <soap12:operation soapAction="http://tempuri.org/IFSXAssistant/AP_maxBankAngle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AP_increaseMaxBankAngle">
+      <soap12:operation soapAction="http://tempuri.org/IFSXAssistant/AP_increaseMaxBankAngle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AP_decreaseMaxBankAngle">
+      <soap12:operation soapAction="http://tempuri.org/IFSXAssistant/AP_decreaseMaxBankAngle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FSXAssistantService">
+    <wsdl:port name="NetTcpBinding_IFSXAssistant" binding="tns:NetTcpBinding_IFSXAssistant">
+      <soap12:address location="net.tcp://localhost:9000/FSXAssistant" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:9000/FSXAssistant</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>l.lomas@itnnovation.net</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
