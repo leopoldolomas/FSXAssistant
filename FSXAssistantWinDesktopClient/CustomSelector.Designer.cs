@@ -39,10 +39,10 @@
             // 
             this.txtValue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValue.Location = new System.Drawing.Point(68, 0);
+            this.txtValue.Location = new System.Drawing.Point(0, 0);
             this.txtValue.Name = "txtValue";
             this.txtValue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtValue.Size = new System.Drawing.Size(104, 29);
+            this.txtValue.Size = new System.Drawing.Size(172, 29);
             this.txtValue.TabIndex = 3;
             this.txtValue.Enter += new System.EventHandler(this.txtValue_Enter);
             this.txtValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValue_KeyPress);
@@ -73,7 +73,7 @@
             // btnQuickDecrease
             // 
             this.btnQuickDecrease.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnQuickDecrease.Location = new System.Drawing.Point(34, 0);
+            this.btnQuickDecrease.Location = new System.Drawing.Point(0, 0);
             this.btnQuickDecrease.Name = "btnQuickDecrease";
             this.btnQuickDecrease.Size = new System.Drawing.Size(34, 29);
             this.btnQuickDecrease.TabIndex = 1;
@@ -84,7 +84,7 @@
             // btnDecrease
             // 
             this.btnDecrease.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnDecrease.Location = new System.Drawing.Point(0, 0);
+            this.btnDecrease.Location = new System.Drawing.Point(34, 0);
             this.btnDecrease.Name = "btnDecrease";
             this.btnDecrease.Size = new System.Drawing.Size(34, 29);
             this.btnDecrease.TabIndex = 2;
@@ -94,11 +94,11 @@
             // 
             // CustomSelector
             // 
+            this.Controls.Add(this.btnDecrease);
+            this.Controls.Add(this.btnQuickDecrease);
             this.Controls.Add(this.txtValue);
             this.Controls.Add(this.btnIncrease);
             this.Controls.Add(this.btnQuickIncrease);
-            this.Controls.Add(this.btnQuickDecrease);
-            this.Controls.Add(this.btnDecrease);
             this.Name = "CustomSelector";
             this.Size = new System.Drawing.Size(240, 29);
             this.ResumeLayout(false);

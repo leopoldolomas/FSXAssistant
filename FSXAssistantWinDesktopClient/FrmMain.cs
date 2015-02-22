@@ -75,6 +75,9 @@ namespace FSXAssistantWinDesktopClient
                 csHeading.SkipValueChangedEvent = true;
                 csHeading.Value = Convert.ToInt32(serviceClient.AP_heading());
             }
+
+            csVertSpeed.SkipValueChangedEvent = true;
+            csVertSpeed.Value = Convert.ToInt32(serviceClient.AP_desiredVerticalAirspeed());
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
